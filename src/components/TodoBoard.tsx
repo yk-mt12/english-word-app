@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Container, Center,Checkbox, CheckboxGroup } from '@chakra-ui/react'
 
 type Todo = {
   value: string;
@@ -95,11 +95,11 @@ export const TodoBoard = () => {
   };
 
   return (
-    <div>
-      <select
+    <>
+     <select
         defaultValue="all"
         onChange={(e) => setFilter(e.target.value as Filter)}
-      >
+         >
         <option value="all">全て</option>
         <option value="checked">完了タスク</option>
         <option value="unchecked">未完了タスク</option>
@@ -137,9 +137,10 @@ export const TodoBoard = () => {
       <ul>
         {filterTodos.map((todo) => {
           return (
-            <li key={todo.id}>
+            <li key={todo.id}
+            className='todoList'>
               <input
-                type="checkbox"
+                type='checkbox'
                 checked={todo.checked}
                 disabled={todo.removed}
                 onChange={() => handleOnCheck(todo.id, todo.checked)}
@@ -157,6 +158,6 @@ export const TodoBoard = () => {
           );
         })}
       </ul>
-    </div>
+    </>
   );
 };

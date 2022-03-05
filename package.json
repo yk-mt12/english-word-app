@@ -1,7 +1,7 @@
 {
   "name": "english-word-app",
   "version": "0.1.0",
-  "private": true,
+    "private": true,
   "dependencies": {
     "@chakra-ui/react": "^1.8.6",
     "@emotion/react": "^11.8.1",
